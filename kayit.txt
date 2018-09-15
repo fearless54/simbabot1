@@ -1,0 +1,25 @@
+  client.user.setPresence(`STREAMING`);
+  client.user.setActivity(`STREAMING`);
+  client.user.setGame(`Simba Sunucusu Tarafından Hazırlandım^^ | ` + client.guilds.size + ` Sunucuya Hizmet Veriyorum.`);
+  
+  
+client.on('message', async message => {
+    if (message.content.toLowerCase() === prefix + 'ping') {
+      message.channel.send(new Discord.RichEmbed().setDescription(`:ping_pong: Pong: **${client.ping}** ms \nÇok Hızlıyım Dimi :joy:`).setColor('RANDOM').setTitle('Anlık Bot Pingi'))    }
+})
+  
+  
+client.on('message', async message => {
+    if (message.content.toLowerCase() === prefix + 'istatistik') {
+      message.channel.send(new Discord.RichEmbed().setDescription(`• Ping             = **${client.ping}** \n• Kullanıcılar     = **${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}** \n• Sunucular        = **${client.guilds.size.toLocaleString()}** \n• Kanallar         = **${client.channels.size.toLocaleString()}** \n• RAM Kullanımı    = **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB** \n• İşletim Sistemi  = **${os.platform()}** \n• Mimari           = **${os.arch()}** \n• Discord.JS sürüm = **${Discord.version}** \n• Node.JS Sürümü   = **${process.version}**`).setColor('RANDOM').setTitle('Anlık Bot İstatsitikleri'))    }
+})
+
+client.on('message', async message => {
+    if (message.content.toLowerCase() === prefix + 'saat') {
+      message.channel.send(new Discord.RichEmbed().setDescription(`**:flag_tr: Saati:** ***${moment().format('HH:mm:ss')}***`).setColor('RANDOM').setTitle('Anlık Türkiye Saati'))    }
+})
+
+client.on('message', async message => {
+    if (message.content.toLowerCase() === prefix + 'davet') {
+      message.channel.send(new Discord.RichEmbed().setDescription(`[Davet Linkim](https://discordapp.com/api/oauth2/authorize?client_id=487717420337856517&permissions=8&scope=bot) \n[DBL Sayfası](https://discordbots.org/bot/487717420337856517) \n[Destek Sunucusu](https://discord.gg/md78fkV)`).setColor('RANDOM').setİcon('https://cdn.discordapp.com/attachments/481919464619900929/488334463990890498/image0.png').setTitle('Bot İle İlgili Linkler'))    }
+})

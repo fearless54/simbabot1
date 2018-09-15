@@ -1,1 +1,1 @@
-# simbabot1
+# Discord Simba Bot
